@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        script(type="text/javascript").
+            function getInputIndexSingle(){
+                var index=document.getElementById('groupIndexSingle').value.toString();
+                document.getElementById("search-index").disabled = true;
+                window.location='/mineGroup/'+index;
+            }
+            function getInputIndexMultiple(){
+                var stopIndex=document.getElementById('groupIndexMultiple').value.toString();
+                document.getElementById("search-index-multiple").disabled = true;
+                window.location='/mineGroups/'+stopIndex;
+            }
+        title Crawler
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css') 
+    body.bg-light
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            a.navbar-brand(href='/') Crawler
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarText', aria-controls='navbarText', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarText.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item
+                        a.nav-link(href='/getAllMinedGroups') Mined Groups
+                        span.sr-only (current)
+                    li.nav-item
+                        a.nav-link(href='/mineGroup') Mine Group
+                    li.nav-item
+                        a.nav-link(href='/mineGroups') Mine Groups
+                    li.nav-item
+                        a.nav-link(href='/downloadCSV') Download CSV
+                span.navbar-text.light Group indexer for Gab
+        .container-fluid.pl-0
+            block content
+            br
+            footer.fixed-bottom.bg-secondary
+                p.text-center.mt-2.text-light Copyright &copy; 2020, Ben Gat
+        script(src='/bower_components/jquery/dist/jquery.js')
+        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+        

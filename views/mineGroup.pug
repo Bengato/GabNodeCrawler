@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    if group.groupName
+        h1 #{title}
+        table.table.ml-0
+            thead.thead-dark
+                tr
+                    th Index
+                    th URL
+                    th Name
+                    th Description
+                    th Image
+                    th Latest Post
+                tr
+            thead
+            tbody
+                tr
+                    td= group.groupIndex
+                    td 
+                        a.nav-link(href=group.groupURL) #{group.groupURL}
+                    td= group.groupName
+                    td= group.groupDescription
+                    td 
+                        img(src=group.groupImage,width="200" alt="")
+                    td
+                        p.text-info #{group.latestPostCreator} &nbsp; #{group.latestPostDate}
+                        br 
+                        p= group.latestPostContent
+                tr
+    else
+        h1.text-center.mt-5 Group does not exist.

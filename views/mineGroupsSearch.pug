@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1 #{title}
+        br
+        h2 How many groups would you like to mine?
+    input(type='number',id='groupIndexMultiple',min='1',max='200000').form-control.col-md-2
+    button(id='search-index-multiple' onClick='getInputIndexMultiple()').btn.btn-sm.btn-secondary.mt-2.col-md-2 Search

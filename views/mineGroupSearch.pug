@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    h1 #{title}
+    input(type='number',id='groupIndexSingle',min='1',max='200000').form-control.col-md-2
+    button(id='search-index' onClick='getInputIndexSingle()').btn.btn-sm.btn-secondary.mt-2.col-md-2 Search

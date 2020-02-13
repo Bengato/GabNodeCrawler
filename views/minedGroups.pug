@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    h1 #{title}
+    table.table
+        thead.thead-dark
+            tr
+                th Index
+                th URL
+                th Name
+                th Description
+                th Image
+                th Latest Post
+            tr
+        thead
+        tbody
+        each group, i in groups
+            tr
+                td= group.Index
+                td 
+                    a.nav-link(href=group.URL) #{group.URL}
+                td= group.Name
+                td= group.Description
+                td 
+                    img(src=group.Image,width="200" alt="")
+                td
+                    p.text-info #{group.LatestPostCreator} &nbsp; #{group.LatestPostDate}
+                    br 
+                    p= group.LatestPostContent
+            tr
