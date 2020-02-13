@@ -1,5 +1,10 @@
 
 # Gab Group Crawler - Node.JS
+>Using puppeteer to do the live crawling headless.
+>Pug to render html easily on responses.
+>CSV converter.
+>Base fs and path modules.
+
 
 ## gabCrawler.js
 
